@@ -1,13 +1,11 @@
 package com.example.demo2.dao.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
 import org.springframework.context.annotation.Bean;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @DynamicInsert
 @Data
@@ -16,6 +14,7 @@ import javax.persistence.Table;
 public class StaffEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ID")
     private int id;
 
@@ -25,6 +24,7 @@ public class StaffEntity {
     @Column(name="PHONE")
     private String phone;
 
+    @JsonIgnore
     @Column(name="PASSWORD")
     private String password;
 
