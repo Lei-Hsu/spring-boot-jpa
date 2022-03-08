@@ -43,4 +43,13 @@ public class StaffsServiceImpl implements StaffsService {
 
     ;
 
+    @Override
+    public void deleteStaff(StaffRequest staffRequest) {
+
+        int staffId = staffRequest.getId();
+
+        staffRepository.deleteById(staffId);
+
+    }
+
 }
