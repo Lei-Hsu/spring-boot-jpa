@@ -3,7 +3,6 @@ package com.example.demo2.dao.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
-import org.springframework.context.annotation.Bean;
 
 import javax.persistence.*;
 
@@ -15,20 +14,21 @@ public class StaffEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="ID")
+    @Column(name = "ID")
     private int id;
 
-    @Column(name="EMAIL")
+    @Column(name = "EMAIL")
     private String email;
 
-    @Column(name="PHONE")
+    @Column(name = "PHONE")
     private String phone;
 
     @JsonIgnore
-    @Column(name="PASSWORD")
+    @Column(name = "PASSWORD")
     private String password;
 
-    @Column(name="POSITION")
+    @Column(name = "POSITION")
     private String position;
+
 
 }

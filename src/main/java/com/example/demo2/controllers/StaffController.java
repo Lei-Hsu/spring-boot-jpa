@@ -40,6 +40,11 @@ public class StaffController {
         return "Delete staffID " + staffRequest.getId() + " success";
     }
 
+    @PutMapping("/updateStaff")
+    public Optional<StaffEntity> updateStaff(@RequestBody StaffRequest staffRequest){
+        return staffService.updateStaff(staffRequest);
+    }
+
     @GetMapping("/findA")
     public List<AA> A() {
         return aRepository.findAll();

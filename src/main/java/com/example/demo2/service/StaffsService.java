@@ -13,4 +13,6 @@ public interface StaffsService {
 
     void deleteStaff(StaffRequest staffRequest);
 
+    Optional<StaffEntity> updateStaff(StaffRequest staffRequest);
+
 }

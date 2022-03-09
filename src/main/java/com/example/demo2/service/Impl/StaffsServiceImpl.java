@@ -50,6 +50,23 @@ public class StaffsServiceImpl implements StaffsService {
 
         staffRepository.deleteById(staffId);
 
+    };
+
+    @Override
+    public Optional<StaffEntity> updateStaff(StaffRequest staffRequest){
+
+        StaffEntity staffEntity = new StaffEntity();
+
+        staffEntity.setId(staffRequest.getId());
+        staffEntity.setEmail(staffRequest.getEmail());
+        staffEntity.setPassword(staffRequest.getPassword());
+        staffEntity.setPhone(staffRequest.getPhone());
+        staffEntity.setPosition(staffRequest.getPosition());
+
+
+        staffRepository.save(staffEntity);
+
+        return staffRepository.findById(staffRequest.getId());
     }
 
 }
