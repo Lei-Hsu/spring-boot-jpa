@@ -19,7 +19,6 @@ public class StaffController {
     @Autowired
     StaffsService staffService;
 
-
     @Autowired
     ARepository aRepository;
 
