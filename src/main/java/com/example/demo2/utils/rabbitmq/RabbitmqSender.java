@@ -10,7 +10,7 @@ public class RabbitmqSender {
     private RabbitTemplate rabbitTemplate;
 
     String exchange = "amq.direct"; // 設定 exchange name
-    String routingKey = "testQueue" ; // 設定 route key
+    String routingKey = "testQueue" ; // 設定 route key , 記得要去 exchange 那邊 bind
 
     public void sendTestMessages(String msg){
         this.rabbitTemplate.convertAndSend(exchange ,routingKey , msg);
